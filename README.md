@@ -42,6 +42,22 @@ export STACKIFY_API_KEY=******
 ```
 
 
+#### Using the new transport (Agent Socket)
+Standard API
+```python
+logger = stackify.getLogger(application="Python Application", environment="Production", api_key="***", transport="agent_socket")
+```
+
+Python Logging Integration
+```python
+stackify_handler = stackify.StackifyHandler(application="Python Application", environment="Production", api_key="***", transport="agent_socket")
+```
+
+Environment Settings
+```bash
+export STACKIFY_TRANSPORT=agent_socket
+```
+
 ## Usage
 
 **stackify-python-api** handles uploads in batches of 100 messages at a time on another thread.
